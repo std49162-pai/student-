@@ -322,7 +322,7 @@
             });
         }
 
-        // --- MODAL CONTROL ---
+        // --- MODAL CONTROL (FIXED classList) ---
         function openModal(name) {
             const modal = document.getElementById('course-modal');
             const data = coursesDatabase[name];
@@ -337,7 +337,8 @@
         }
 
         function closeModal() {
-            document.getElementById('course-modal').add('hidden');
+            const modal = document.getElementById('course-modal');
+            modal.classList.add('hidden');
         }
 
         // --- AI ADVISOR ---
@@ -363,7 +364,7 @@
 
             // บันทึกและจำลองข้อมูลไปขึ้นแสดงผลที่กล่อง Admin รับเรื่องทันที
             inboxContent.innerHTML = `
-                <div class="bg-white dark:bg-gray-800 p-3 rounded-xl border border-gray-200 dark:border-gray-700 space-y-1 shadow-sm animate-fade-in text-gray-800 dark:text-gray-200">
+                <div class="bg-white dark:bg-gray-800 p-3 rounded-xl border border-gray-200 dark:border-gray-700 space-y-1 shadow-sm text-gray-800 dark:text-gray-200">
                     <div class="flex justify-between items-center text-xs text-gray-400 font-bold">
                         <span><i class="fa-solid fa-user text-blue-500 mr-1"></i> ผู้ส่ง: ${nameInput}</span>
                         <span>เพิ่งส่งเมื่อสักครู่</span>
